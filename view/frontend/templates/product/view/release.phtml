@@ -1,0 +1,8 @@
+<?php
+/** @var \DenysUA\ReleaseDate\ViewModel\ReleaseDate $viewModel */
+$viewModel = $block->getViewModel();
+$product = $block->getParentBlock()->getProduct();
+?>
+<?php if ($viewModel && $product && $releaseDate = $viewModel->getReleaseDate($product)): ?>
+    <p><?= $escaper->escapeHtml(__("Available from %1", $releaseDate)) ?></p>
+<?php endif; ?>
